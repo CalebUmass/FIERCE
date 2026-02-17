@@ -3,57 +3,85 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Page Title -->
   <title>Contact • Spring Board</title>
+
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
   <link rel="stylesheet" href="./styles.css">
+
+  <!-- SEO -->
+  <meta name="description" content="Contact the FIERCE Spring Board program. Reach out with questions or learn more about our community.">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="FIERCE • Fostering Inclusion in Computing">
+  <meta property="og:description" content="Building community and support for underrepresented students in computing.">
+  <meta property="og:image" content="https://yourdomain.com/preview-image.jpg">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:title" content="FIERCE Program">
+  <meta property="twitter:description" content="Fostering Inclusion by Engaging in Real-World Computing Education.">
 </head>
+
 <body>
+  <!-- Header -->
   <header class="site-header">
     <div class="nav-container">
-      <div class="nav-left">
-        <a href="./index.html" class="logo" aria-label="Spring Board Home">
-          <span class="logo-mark">⛵</span>
-          <span class="logo-text">Spring Board</span>
-        </a>
-      </div>
-      <nav class="nav-center" aria-label="Primary">
-        <a href="./index.html" class="nav-link" data-page="home">Home</a>
-        <a href="./programming.html" class="nav-link" data-page="programming">Programming</a>
-        <a href="./contact.html" class="nav-link" data-page="contact">Contact</a>
+      <a href="./index.html" class="logo" aria-label="Spring Board Home">
+        <span class="logo-mark">⛵</span>
+        <span class="logo-text">Spring Board</span>
+      </a>
+
+      <nav class="nav-center" aria-label="Primary navigation">
+        <a href="./index.html" class="nav-link">Home</a>
+        <a href="./programming.html" class="nav-link">Programming</a>
+        <a href="./contact.html" class="nav-link" aria-current="page">Contact</a>
       </nav>
-      <div class="nav-right">
-        <a href="mailto:contact@example.com" class="cta-button">Email Us</a>
-      </div>
+
+      <a href="mailto:contact@example.com" class="cta-button">Email Us</a>
     </div>
   </header>
 
+  <!-- Main Content -->
   <main>
-    <section class="hero" aria-label="Contact">
+    <section class="hero">
       <div class="hero-inner">
         <h1>Contact</h1>
-        <p>We'd love to hear from you. Reach out with any questions.</p>
+        <p>We’d love to hear from you. Reach out with any questions.</p>
       </div>
     </section>
 
     <section class="section">
       <div class="container">
         <h2>Get in touch</h2>
-        <div class="cards" style="grid-template-columns: repeat(2, minmax(0, 1fr));">
+
+        <div class="cards contact-grid">
           <div class="card">
             <h3>Email</h3>
-            <p><a class="nav-link" href="mailto:contact@example.com">contact@example.com</a></p>
+            <p>
+              <a href="mailto:contact@example.com" class="nav-link">
+                contact@example.com
+              </a>
+            </p>
           </div>
+
           <div class="card">
             <h3>Location</h3>
-            <p>Downtown campus + Remote</p>
+            <p>Downtown campus · Remote</p>
           </div>
         </div>
       </div>
     </section>
   </main>
 
+  <!-- Footer -->
   <footer class="site-footer">
     <div class="container">
       <p>© <span id="year"></span> Spring Board. All rights reserved.</p>
@@ -63,5 +91,3 @@
   <script src="./script.js"></script>
 </body>
 </html>
-
-

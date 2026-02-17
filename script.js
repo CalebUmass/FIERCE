@@ -1,90 +1,88 @@
-// ========================================
-// Navigation and Animation System
-// ========================================
+// -------------------------------
+// Navigation + page behavior
+// -------------------------------
 
-// Page-aware active nav highlighting and optional section tracking for the Home page
-const sectionIds = [
+// Sections used for scroll tracking on the home page
+const HOME_SECTION_IDS = [
   'top',
-  'programming',
   'mission',
-  'history',
   'team',
   'requirements',
   'logistics',
   'faqs'
 ];
 
-// Determine which page is currently active based on URL
-function getActivePageKey() {
-  const path = (location.pathname || '').toLowerCase();
-  if (path.endsWith('/programming.html')) return 'programming';
-  if (path.endsWith('/contact.html')) return 'contact';
-  // Default to home for index.html or root
+// Determine which page we're on
+function getCurrentPage() {
+  const path = window.location.pathname.toLowerCase();
+
+  if (path.includes('programming')) return 'programming';
+  if (path.includes('contact')) return 'contact';
   return 'home';
 }
 
-// Highlight the active navigation link based on current page
-function highlightActivePageLink() {
-  const key = getActivePageKey();
-  document.querySelectorAll('.nav-link[data-page]')
-    .forEach(link => link.classList.toggle('active', link.dataset.page === key));
+// Highlight active navigation link
+function setActiveNavLink() {
+  const currentPage = getCurrentPage();
+
+  document.querySelectorAll('.nav-link[data-page]').forEach(link => {
+    link.classList.toggle('active', link.dataset.page === currentPage);
+  });
 }
 
-function highlightActiveSectionOnHome() {
-  // Only run section-based highlighting on the Home page
-  if (getActivePageKey() !== 'home') return;
-  const fromTop = window.scrollY + 80;
-  let current = 'top';
-  for (const id of sectionIds) {
-    const el = document.getElementById(id);
-    if (!el) continue;
-    if (el.offsetTop <= fromTop) current = id;
-  }
-  // Do not toggle page-level nav; Home stays active. Optional: no-op here.
+// Track which section is visible on the home page
+function updateActiveHomeSection() {
+  if (getCurrentPage() !== 'home') return;
+
+  const scrollPosition = window.scrollY + 100;
+  let currentSection = 'top';
+
+  HOME_SECTION_IDS.forEach(id => {
+    const section = document.getElementById(id);
+    if (section && section.offsetTop <= scrollPosition) {
+      currentSection = id;
+    }
+  });
+
+  // Add logic here if you want section indicators to update
 }
 
-window.addEventListener('scroll', () => {
-  highlightActiveSectionOnHome();
-}, { passive: true });
+// Throttled scroll listener
+let scrollTimeout;
+window.addEventListener(
+  'scroll',
+  () => {
+    clearTimeout(scrollTimeout);
+    scrollTimeout = setTimeout(updateActiveHomeSection, 50);
+  },
+  { passive: true }
+);
 
-// Intersection Observer for fade-in animations
-// ========================================
-// Animation System - Scroll-triggered Fade-in Effects
-// ========================================
-
-// Set up scroll-triggered fade-in animations using Intersection Observer
-function setupFadeInAnimations() {
+// Fade-in animation for sections
+function initFadeInAnimations() {
   const sections = document.querySelectorAll('.section');
-  
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        // Stop observing once animated to prevent re-triggering
-        observer.unobserve(entry.target);
-      }
-    });
-  }, {
-    threshold: 0.5, // Trigger at 50% visibility
-    rootMargin: '0px 0px 0px 0px' // No offset
-  });
 
-  sections.forEach(section => {
-    observer.observe(section);
-  });
+  const observer = new IntersectionObserver(
+    entries => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      });
+    },
+    { threshold: 0.2 }
+  );
+
+  sections.forEach(section => observer.observe(section));
 }
 
-// ========================================
-// Event Listeners and Initialization
-// ========================================
-
-// Initialize all functionality when page loads
+// Run on page load
 window.addEventListener('load', () => {
-  highlightActivePageLink();
-  highlightActiveSectionOnHome();
-  setupFadeInAnimations();
+  setActiveNavLink();
+  initFadeInAnimations();
+
+  // Update footer year automatically
   const yearEl = document.getElementById('year');
   if (yearEl) yearEl.textContent = new Date().getFullYear();
 });
-
-

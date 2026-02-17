@@ -1,6 +1,6 @@
-/* ========================================
-   CSS Custom Properties - Global Variables
-   ======================================== */
+/* -------------------------------
+   Global variables
+   ------------------------------- */
 :root {
   --bg: #0b0e14;
   --panel: #111522;
@@ -22,7 +22,16 @@ html, body {
   height: 100%;
   background: var(--bg);
   color: var(--text);
-  font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, 'Apple Color Emoji', 'Segoe UI Emoji';
+  font-family:
+    'Inter',
+    system-ui,
+    -apple-system,
+    'Segoe UI',
+    Roboto,
+    Helvetica,
+    Arial,
+    'Apple Color Emoji',
+    'Segoe UI Emoji';
   scroll-behavior: smooth;
 }
 
@@ -88,7 +97,7 @@ html, body {
   color: var(--text);
 }
 
-/* Center-out underline animation - only for active page */
+/* Active navigation underline */
 .nav-link::after {
   content: "";
   position: absolute;
@@ -165,7 +174,7 @@ html, body {
   background: linear-gradient(180deg, var(--panel), var(--bg));
 }
 
-/* Apple-style load-in animation for section content */
+/* Section fade-in animation */
 .section .container {
   opacity: 0;
   transform: translateY(60px);
@@ -178,7 +187,7 @@ html, body {
   transform: translateY(0);
 }
 
-/* Apple-style staggered animation for cards and lists */
+/* Staggered animation for section content */
 .section .card,
 .section .list,
 .section .faq,
@@ -201,7 +210,7 @@ html, body {
   transform: translateY(0);
 }
 
-/* Apple-style staggered delay with subtle bounce */
+/* Staggered transition timing */
 .section.visible .container {
   transition-delay: 0.1s;
 }
@@ -333,11 +342,12 @@ html, body {
   color: var(--muted);
 }
 
-.site-footer {
-  padding: 40px 20px;
-  color: var(--muted);
-}
+ .site-footer {
+   padding: 40px 20px;
+   color: var(--muted);
+ }
 
+/* Responsive layout */
 @media (max-width: 900px) {
   .cards, .team-grid {
     grid-template-columns: 1fr;
