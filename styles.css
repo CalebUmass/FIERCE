@@ -143,10 +143,24 @@ html, body {
   background:
     radial-gradient(1200px 600px at 10% -10%, rgba(106,161,255,0.25), transparent),
     radial-gradient(1000px 600px at 100% 0%, rgba(123,241,200,0.18), transparent),
+    url("./images/afterComference.jpeg") left bottom / 34% auto no-repeat,
+    url("./images/boston2025ComferenceMembers.jpeg") right bottom / 32% auto no-repeat,
     url("./images/bostonFullComference.jpeg") center/cover no-repeat;
   border-bottom: 1px solid var(--border);
   display: flex;
   align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: -40px;
+  border-radius: 32px;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at top left, rgba(11, 14, 20, 0.75), transparent 62%),
+    radial-gradient(circle at bottom right, rgba(11, 14, 20, 0.75), transparent 62%);
 }
 .hero-inner {
   max-width: 1100px;
