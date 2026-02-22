@@ -140,8 +140,10 @@ html, body {
 .hero {
   min-height: calc(100vh - 80px);
   padding: 96px 20px 64px;
-  background: radial-gradient(1200px 600px at 10% -10%, rgba(106,161,255,0.25), transparent),
-              radial-gradient(1000px 600px at 100% 0%, rgba(123,241,200,0.18), transparent);
+  background:
+    radial-gradient(1200px 600px at 10% -10%, rgba(106,161,255,0.25), transparent),
+    radial-gradient(1000px 600px at 100% 0%, rgba(123,241,200,0.18), transparent),
+    url("./images/bostonFullComference.jpeg") center/cover no-repeat;
   border-bottom: 1px solid var(--border);
   display: flex;
   align-items: center;
@@ -149,6 +151,11 @@ html, body {
 .hero-inner {
   max-width: 1100px;
   margin: 0 auto;
+  background: rgba(11, 14, 20, 0.78);
+  border-radius: 16px;
+  padding: 24px 20px;
+  border: 1px solid var(--border);
+  backdrop-filter: blur(10px);
 }
 .hero h1 {
   margin: 0 0 12px 0;
@@ -361,6 +368,7 @@ html, body {
   .hero h1 {
     font-size: 34px;
   }
+  .hero-inner {
+    padding: 20px 16px;
+  }
 }
-
-
