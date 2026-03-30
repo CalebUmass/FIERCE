@@ -329,7 +329,8 @@ button {
   box-shadow: var(--shadow-strong);
 }
 
-.hero-inner--home {
+.hero-inner--home,
+.hero-inner--split {
   display: grid;
   grid-template-columns: minmax(0, 1.12fr) minmax(300px, 0.88fr);
   align-items: center;
@@ -385,6 +386,11 @@ button {
 .hero:not(.hero-home) .hero-inner {
   max-width: 780px;
   padding: 48px 44px;
+}
+
+.hero:not(.hero-home) .hero-inner--split {
+  max-width: 1120px;
+  padding: 44px 42px;
 }
 
 .hero:not(.hero-home) h1 {
@@ -778,7 +784,8 @@ button {
     padding: 38px 34px;
   }
 
-  .hero-inner--home {
+  .hero-inner--home,
+  .hero-inner--split {
     grid-template-columns: 1fr;
     gap: 34px;
   }
