@@ -2,11 +2,11 @@
    Global variables
    ------------------------------- */
 :root {
-  --bg: #0f0c0d;
-  --bg-elevated: #181415;
-  --panel: rgba(24, 20, 21, 0.94);
-  --panel-elevated: rgba(31, 27, 28, 0.97);
-  --panel-soft: rgba(41, 36, 37, 0.92);
+  --bg: #151112;
+  --bg-elevated: #1d1819;
+  --panel: rgba(29, 24, 25, 0.94);
+  --panel-elevated: rgba(36, 31, 32, 0.97);
+  --panel-soft: rgba(46, 40, 41, 0.92);
   --text: #f6f2f0;
   --muted: #c7bbb7;
   --muted-strong: #ddd1cd;
@@ -35,7 +35,7 @@ html, body {
   background:
     radial-gradient(1100px 620px at 14% -10%, rgba(164, 39, 31, 0.09), transparent 55%),
     radial-gradient(900px 560px at 100% 0%, rgba(228, 186, 100, 0.06), transparent 48%),
-    linear-gradient(180deg, #100d0e 0%, #0c0a0b 100%);
+    linear-gradient(180deg, #171314 0%, #121011 100%);
   color: var(--text);
   font-family:
     'Inter',
