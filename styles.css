@@ -130,7 +130,7 @@ button {
 .hero-inner,
 .hero-brand-panel,
 .card,
-.person,
+.person-face,
 .faq details {
   position: relative;
   overflow: hidden;
@@ -152,7 +152,7 @@ button {
 .hero-inner::before,
 .hero-brand-panel::before,
 .card::before,
-.person::before,
+.person-face::before,
 .faq details::before {
   content: "";
   position: absolute;
@@ -205,7 +205,6 @@ button {
   color: var(--text);
 }
 
-.nav-link.active,
 .nav-link[aria-current='page'] {
   color: var(--text);
 }
@@ -225,7 +224,6 @@ button {
 }
 
 .nav-link:hover::after,
-.nav-link.active::after,
 .nav-link[aria-current='page']::after {
   transform: translateX(-50%) scaleX(1);
 }
@@ -526,8 +524,7 @@ button {
 }
 
 .card h3,
-.faq summary,
-.team-info h3 {
+.faq summary {
   color: var(--text);
 }
 
@@ -540,8 +537,7 @@ button {
 
 .card p,
 .faq p,
-.list,
-.team-info .class-year {
+.list {
   color: var(--muted);
 }
 
@@ -578,20 +574,79 @@ button {
 }
 
 .person {
+  position: relative;
+  display: block;
+  flex: 0 1 236px;
+  width: 100%;
+  max-width: 236px;
+  min-height: 356px;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: inherit;
+  font: inherit;
+  text-align: center;
+  cursor: pointer;
+  appearance: none;
+  perspective: 1200px;
+}
+
+.person-inner {
+  position: relative;
+  display: block;
+  width: 100%;
+  min-height: 356px;
+  transform-style: preserve-3d;
+  transition: transform 420ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.person.is-flipped .person-inner {
+  transform: rotateY(180deg);
+}
+
+.person-face {
+  position: absolute;
+  inset: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 100%;
-  max-width: 236px;
   padding: 30px 20px 28px;
-  text-align: center;
   background: linear-gradient(180deg, var(--panel-elevated), rgba(18, 15, 16, 0.98));
   border: 1px solid var(--border);
   border-radius: 20px;
   box-shadow: var(--shadow-soft);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+.person-front {
+  justify-content: flex-start;
+}
+
+.person-back {
+  justify-content: center;
+  gap: 12px;
+  transform: rotateY(180deg);
+  background: linear-gradient(180deg, rgba(44, 27, 20, 0.98), rgba(24, 18, 16, 0.98));
+}
+
+.person:hover .person-face {
+  border-color: var(--accent-border);
+}
+
+.person:focus-visible {
+  outline: none;
+}
+
+.person:focus-visible .person-face {
+  border-color: var(--brand-highlight);
+  box-shadow:
+    0 0 0 3px rgba(228, 186, 100, 0.18),
+    var(--shadow-soft);
 }
 
 .team-circle {
+  display: block;
   width: 156px;
   height: 156px;
   margin-bottom: 20px;
@@ -607,7 +662,14 @@ button {
   object-fit: cover;
 }
 
-.team-info h3 {
+.team-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.team-role {
+  display: block;
   margin: 0 0 10px 0;
   color: var(--muted-strong);
   font-size: 0.82rem;
@@ -616,7 +678,8 @@ button {
   text-transform: uppercase;
 }
 
-.team-info .name {
+.team-name {
+  display: block;
   margin: 0 0 6px 0;
   color: var(--text);
   font-size: 1.02rem;
@@ -624,10 +687,30 @@ button {
   line-height: 1.5;
 }
 
-.team-info .class-year {
+.team-year {
+  display: block;
   margin: 0;
   font-size: 0.94rem;
   font-weight: 500;
+}
+
+.team-bio {
+  display: block;
+  max-width: 19ch;
+  color: var(--muted);
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+.team-hint {
+  display: block;
+  margin-top: auto;
+  padding-top: 18px;
+  color: var(--brand-highlight);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
 }
 
 /* -------------------------------
@@ -771,7 +854,7 @@ button {
   }
 
   .card,
-  .person {
+  .person-face {
     padding: 24px 22px;
   }
 
@@ -816,6 +899,12 @@ button {
   }
 
   .person {
+    flex-basis: 100%;
     max-width: none;
+    min-height: 336px;
+  }
+
+  .person-inner {
+    min-height: 336px;
   }
 }

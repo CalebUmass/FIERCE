@@ -43,9 +43,9 @@
         </a>
       </div>
       <nav class="nav-center" aria-label="Primary navigation">
-        <a href="./index.html" class="nav-link" data-page="home">Home</a>
-        <a href="./programming.html" class="nav-link" data-page="programming">Events</a>
-        <a href="./contact.html" class="nav-link" data-page="contact">Contact</a>
+        <a href="./index.html" class="nav-link" aria-current="page">Home</a>
+        <a href="./programming.html" class="nav-link">Events</a>
+        <a href="./contact.html" class="nav-link">Contact</a>
       </nav>
       <div class="nav-right">
         <a href="./programming.html" class="cta-button">Get Started</a>
@@ -95,104 +95,200 @@
         <h2>Our Team</h2>
         <!-- Top Row - 4 team members -->
         <div class="team-row">
-          <div class="person">
-            <div class="team-info">
-              <h3>Admin</h3>
-            </div>
-            <div class="team-circle">
-              <img src="https://picsum.photos/150/150?random=1" alt="Team member photo" />
-            </div>
-            <div class="team-info">
-              <p class="name">Erika Dawson-Head</p>
-            </div>
-          </div>
-          <div class="person">
-            <div class="team-info">
-              <h3>Head Mentor</h3>
-            </div>
-            <div class="team-circle">
-              <img src="https://picsum.photos/150/150?random=3" alt="Team member photo" />
-            </div>
-            <div class="team-info">
-              <p class="name">Felix Manuel Pantoja</p>
-              <p class="class-year">26'</p>
-            </div>
-          </div>
-          <div class="person">
-            <div class="team-info">
-              <h3>Head Mentor</h3>
-            </div>
-            <div class="team-circle">
-              <img src="https://picsum.photos/150/150?random=4" alt="Team member photo" />
-            </div>
-            <div class="team-info">
-              <p class="name">Upashana Suresh Kumar</p>
-              <p class="class-year">26'</p>
-            </div>
-          </div>
-          <div class="person">
-            <div class="team-info">
-              <h3>Head Mentor</h3>
-            </div>
-            <div class="team-circle">
-              <img src="https://picsum.photos/150/150?random=5" alt="Team member photo" />
-            </div>
-            <div class="team-info">
-              <p class="name">Sampada Tumuluri</p>
-              <p class="class-year">26'</p>
-            </div>
-          </div>
+          <button class="person person-card" type="button" aria-pressed="false" aria-label="Team member card for Erika Dawson-Head">
+            <span class="person-inner">
+              <span class="person-face person-front">
+                <span class="team-info">
+                  <span class="team-role">Admin</span>
+                </span>
+                <span class="team-circle">
+                  <img src="https://picsum.photos/150/150?random=1" alt="Erika Dawson-Head" />
+                </span>
+                <span class="team-info">
+                  <span class="team-name">Erika Dawson-Head</span>
+                </span>
+                <span class="team-hint">Click to learn more</span>
+              </span>
+              <span class="person-face person-back">
+                <span class="team-info">
+                  <span class="team-role">About Erika</span>
+                </span>
+                <span class="team-bio">Erika helps guide FIERCE behind the scenes and supports the mentor team as the program grows.</span>
+                <span class="team-hint">Click to flip back</span>
+              </span>
+            </span>
+          </button>
+          <button class="person person-card" type="button" aria-pressed="false" aria-label="Team member card for Felix Manuel Pantoja">
+            <span class="person-inner">
+              <span class="person-face person-front">
+                <span class="team-info">
+                  <span class="team-role">Head Mentor</span>
+                </span>
+                <span class="team-circle">
+                  <img src="https://picsum.photos/150/150?random=3" alt="Felix Manuel Pantoja" />
+                </span>
+                <span class="team-info">
+                  <span class="team-name">Felix Manuel Pantoja</span>
+                  <span class="team-year">26'</span>
+                </span>
+                <span class="team-hint">Click to learn more</span>
+              </span>
+              <span class="person-face person-back">
+                <span class="team-info">
+                  <span class="team-role">About Felix</span>
+                </span>
+                <span class="team-bio">Felix co-leads the mentor team and helps members work through projects, workshops, and technical questions.</span>
+                <span class="team-hint">Click to flip back</span>
+              </span>
+            </span>
+          </button>
+          <button class="person person-card" type="button" aria-pressed="false" aria-label="Team member card for Upashana Suresh Kumar">
+            <span class="person-inner">
+              <span class="person-face person-front">
+                <span class="team-info">
+                  <span class="team-role">Head Mentor</span>
+                </span>
+                <span class="team-circle">
+                  <img src="https://picsum.photos/150/150?random=4" alt="Upashana Suresh Kumar" />
+                </span>
+                <span class="team-info">
+                  <span class="team-name">Upashana Suresh Kumar</span>
+                  <span class="team-year">26'</span>
+                </span>
+                <span class="team-hint">Click to learn more</span>
+              </span>
+              <span class="person-face person-back">
+                <span class="team-info">
+                  <span class="team-role">About Upashana</span>
+                </span>
+                <span class="team-bio">Upashana helps lead mentor planning and creates a welcoming space for students building new technical skills.</span>
+                <span class="team-hint">Click to flip back</span>
+              </span>
+            </span>
+          </button>
+          <button class="person person-card" type="button" aria-pressed="false" aria-label="Team member card for Sampada Tumuluri">
+            <span class="person-inner">
+              <span class="person-face person-front">
+                <span class="team-info">
+                  <span class="team-role">Head Mentor</span>
+                </span>
+                <span class="team-circle">
+                  <img src="https://picsum.photos/150/150?random=5" alt="Sampada Tumuluri" />
+                </span>
+                <span class="team-info">
+                  <span class="team-name">Sampada Tumuluri</span>
+                  <span class="team-year">26'</span>
+                </span>
+                <span class="team-hint">Click to learn more</span>
+              </span>
+              <span class="person-face person-back">
+                <span class="team-info">
+                  <span class="team-role">About Sampada</span>
+                </span>
+                <span class="team-bio">Sampada supports the mentor team by shaping sessions and helping students keep momentum on their goals.</span>
+                <span class="team-hint">Click to flip back</span>
+              </span>
+            </span>
+          </button>
         </div>
         <!-- Bottom Row - 4 team members -->
         <div class="team-row">
-          <div class="person">
-            <div class="team-info">
-              <h3>Mentor</h3>
-            </div>
-            <div class="team-circle">
-              <img src="https://picsum.photos/150/150?random=6" alt="Team member photo" />
-            </div>
-            <div class="team-info">
-              <p class="name">Anay Liu</p>
-              <p class="class-year">27'</p>
-            </div>
-          </div>
-          <div class="person">
-            <div class="team-info">
-              <h3>Mentor</h3>
-            </div>
-            <div class="team-circle">
-              <img src="https://picsum.photos/150/150?random=7" alt="Team member photo" />
-            </div>
-            <div class="team-info">
-              <p class="name">Caleb Richards</p>
-              <p class="class-year">28'</p>
-            </div>
-          </div>
-          <div class="person">
-            <div class="team-info">
-              <h3>Mentor</h3>
-            </div>
-            <div class="team-circle">
-              <img src="https://picsum.photos/150/150?random=8" alt="Team member photo" />
-            </div>
-            <div class="team-info">
-              <p class="name">Arsen Sekmokas</p>
-              <p class="class-year">28'</p>
-            </div>
-          </div>
-          <div class="person">
-            <div class="team-info">
-              <h3>Mentor</h3>
-            </div>
-            <div class="team-circle">
-              <img src="https://picsum.photos/150/150?random=9" alt="Team member photo" />
-            </div>
-            <div class="team-info">
-              <p class="name">August Singh</p>
-              <p class="class-year">28'</p>
-            </div>
-          </div>
+          <button class="person person-card" type="button" aria-pressed="false" aria-label="Team member card for Anay Liu">
+            <span class="person-inner">
+              <span class="person-face person-front">
+                <span class="team-info">
+                  <span class="team-role">Mentor</span>
+                </span>
+                <span class="team-circle">
+                  <img src="https://picsum.photos/150/150?random=6" alt="Anay Liu" />
+                </span>
+                <span class="team-info">
+                  <span class="team-name">Anay Liu</span>
+                  <span class="team-year">27'</span>
+                </span>
+                <span class="team-hint">Click to learn more</span>
+              </span>
+              <span class="person-face person-back">
+                <span class="team-info">
+                  <span class="team-role">About Anay</span>
+                </span>
+                <span class="team-bio">Anay helps students build confidence, ask questions early, and keep moving during workshops and projects.</span>
+                <span class="team-hint">Click to flip back</span>
+              </span>
+            </span>
+          </button>
+          <button class="person person-card" type="button" aria-pressed="false" aria-label="Team member card for Caleb Richards">
+            <span class="person-inner">
+              <span class="person-face person-front">
+                <span class="team-info">
+                  <span class="team-role">Mentor</span>
+                </span>
+                <span class="team-circle">
+                  <img src="https://picsum.photos/150/150?random=7" alt="Caleb Richards" />
+                </span>
+                <span class="team-info">
+                  <span class="team-name">Caleb Richards</span>
+                  <span class="team-year">28'</span>
+                </span>
+                <span class="team-hint">Click to learn more</span>
+              </span>
+              <span class="person-face person-back">
+                <span class="team-info">
+                  <span class="team-role">About Caleb</span>
+                </span>
+                <span class="team-bio">Caleb supports members with hands-on problem solving and encourages steady progress on technical work.</span>
+                <span class="team-hint">Click to flip back</span>
+              </span>
+            </span>
+          </button>
+          <button class="person person-card" type="button" aria-pressed="false" aria-label="Team member card for Arsen Sekmokas">
+            <span class="person-inner">
+              <span class="person-face person-front">
+                <span class="team-info">
+                  <span class="team-role">Mentor</span>
+                </span>
+                <span class="team-circle">
+                  <img src="https://picsum.photos/150/150?random=8" alt="Arsen Sekmokas" />
+                </span>
+                <span class="team-info">
+                  <span class="team-name">Arsen Sekmokas</span>
+                  <span class="team-year">28'</span>
+                </span>
+                <span class="team-hint">Click to learn more</span>
+              </span>
+              <span class="person-face person-back">
+                <span class="team-info">
+                  <span class="team-role">About Arsen</span>
+                </span>
+                <span class="team-bio">Arsen mentors students through debugging, project planning, and the day-to-day challenges of learning to code.</span>
+                <span class="team-hint">Click to flip back</span>
+              </span>
+            </span>
+          </button>
+          <button class="person person-card" type="button" aria-pressed="false" aria-label="Team member card for August Singh">
+            <span class="person-inner">
+              <span class="person-face person-front">
+                <span class="team-info">
+                  <span class="team-role">Mentor</span>
+                </span>
+                <span class="team-circle">
+                  <img src="https://picsum.photos/150/150?random=9" alt="August Singh" />
+                </span>
+                <span class="team-info">
+                  <span class="team-name">August Singh</span>
+                  <span class="team-year">28'</span>
+                </span>
+                <span class="team-hint">Click to learn more</span>
+              </span>
+              <span class="person-face person-back">
+                <span class="team-info">
+                  <span class="team-role">About August</span>
+                </span>
+                <span class="team-bio">August helps members stay engaged, break down tough problems, and grow their skills through practice.</span>
+                <span class="team-hint">Click to flip back</span>
+              </span>
+            </span>
+          </button>
         </div>
       </div>
     </section>

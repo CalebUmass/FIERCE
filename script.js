@@ -1,66 +1,15 @@
 // -------------------------------
-// Navigation + page behavior
+// Page behavior
 // -------------------------------
 
-// Sections used for scroll tracking on the home page
-const HOME_SECTION_IDS = [
-  'top',
-  'mission',
-  'team',
-  'requirements',
-  'logistics',
-  'faqs'
-];
-
-// Determine which page we're on
-function getCurrentPage() {
-  const path = window.location.pathname.toLowerCase();
-
-  if (path.includes('programming')) return 'programming';
-  if (path.includes('contact')) return 'contact';
-  return 'home';
-}
-
-// Highlight active navigation link
-function setActiveNavLink() {
-  const currentPage = getCurrentPage();
-
-  document.querySelectorAll('.nav-link[data-page]').forEach(link => {
-    link.classList.toggle('active', link.dataset.page === currentPage);
-  });
-}
-
-// Track which section is visible on the home page
-function updateActiveHomeSection() {
-  if (getCurrentPage() !== 'home') return;
-
-  const scrollPosition = window.scrollY + 100;
-  let currentSection = 'top';
-
-  HOME_SECTION_IDS.forEach(id => {
-    const section = document.getElementById(id);
-    if (section && section.offsetTop <= scrollPosition) {
-      currentSection = id;
-    }
-  });
-
-  // Add logic here if you want section indicators to update
-}
-
-// Throttled scroll listener
-let scrollTimeout;
-window.addEventListener(
-  'scroll',
-  () => {
-    clearTimeout(scrollTimeout);
-    scrollTimeout = setTimeout(updateActiveHomeSection, 50);
-  },
-  { passive: true }
-);
-
-// Fade-in animation for sections
 function initFadeInAnimations() {
   const sections = document.querySelectorAll('.section');
+  if (!sections.length) return;
+
+  if (!('IntersectionObserver' in window)) {
+    sections.forEach(section => section.classList.add('visible'));
+    return;
+  }
 
   const observer = new IntersectionObserver(
     entries => {
@@ -77,12 +26,37 @@ function initFadeInAnimations() {
   sections.forEach(section => observer.observe(section));
 }
 
-// Run on page load
-window.addEventListener('load', () => {
-  setActiveNavLink();
-  initFadeInAnimations();
+function setTeamCardState(card, isFlipped) {
+  const front = card.querySelector('.person-front');
+  const back = card.querySelector('.person-back');
 
-  // Update footer year automatically
+  card.classList.toggle('is-flipped', isFlipped);
+  card.setAttribute('aria-pressed', String(isFlipped));
+
+  if (front) front.setAttribute('aria-hidden', String(isFlipped));
+  if (back) back.setAttribute('aria-hidden', String(!isFlipped));
+}
+
+// Flip team cards on click/tap
+function initTeamCardFlips() {
+  const teamCards = document.querySelectorAll('.person-card');
+  if (!teamCards.length) return;
+
+  teamCards.forEach(card => {
+    setTeamCardState(card, false);
+
+    card.addEventListener('click', () => {
+      setTeamCardState(card, !card.classList.contains('is-flipped'));
+    });
+  });
+}
+
+function initPage() {
+  initFadeInAnimations();
+  initTeamCardFlips();
+
   const yearEl = document.getElementById('year');
   if (yearEl) yearEl.textContent = new Date().getFullYear();
-});
+}
+
+document.addEventListener('DOMContentLoaded', initPage);
