@@ -10,7 +10,7 @@
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet">
 
   <!-- Styles -->
   <link rel="stylesheet" href="./styles.css">
@@ -36,8 +36,18 @@
     <div class="nav-container">
       <div class="nav-left">
         <a href="./index.html" class="logo" aria-label="FIERCE Home">
-          <span class="logo-mark">⛵</span>
-          <span class="logo-text">FIERCE</span>
+          <span class="logo-media" aria-hidden="true">
+            <img
+              src="./images/fierce_logo.jpeg"
+              alt=""
+              class="logo-image"
+              decoding="async"
+            />
+          </span>
+          <span class="logo-copy">
+            <span class="logo-text">FIERCE</span>
+            <span class="logo-tagline">Fostering Inclusion in Computing</span>
+          </span>
         </a>
       </div>
 
@@ -70,7 +80,7 @@
           <div class="card">
             <h3>Email</h3>
             <p>
-              <a href="mailto:contact@example.com" class="nav-link">
+              <a href="mailto:contact@example.com" class="text-link">
                 contact@example.com
               </a>
             </p>
@@ -88,7 +98,7 @@
   <!-- Footer -->
   <footer class="site-footer">
     <div class="container">
-      <p>© <span id="year"></span> FIERCE. All rights reserved.</p>
+      <p>© <span id="year"></span> FIERCE Program. All rights reserved.</p>
     </div>
   </footer>
 

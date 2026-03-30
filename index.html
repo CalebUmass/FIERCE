@@ -6,7 +6,7 @@
   <title>FIERCE Program</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./styles.css">
   <meta name="title" content="FIERCE • Fostering Inclusion in Computing">
   <meta name="description" content="An inclusive Residential RAP for computer science and informatics majors, fostering professional support networks for underrepresented students.">
@@ -28,8 +28,18 @@
     <div class="nav-container">
       <div class="nav-left">
         <a href="./index.html" class="logo" aria-label="FIERCE Home">
-          <span class="logo-mark">⛵</span>
-          <span class="logo-text">FIERCE</span>
+          <span class="logo-media" aria-hidden="true">
+            <img
+              src="./images/fierce_logo.jpeg"
+              alt=""
+              class="logo-image"
+              decoding="async"
+            />
+          </span>
+          <span class="logo-copy">
+            <span class="logo-text">FIERCE</span>
+            <span class="logo-tagline">Fostering Inclusion in Computing</span>
+          </span>
         </a>
       </div>
       <nav class="nav-center" aria-label="Primary navigation">
@@ -45,21 +55,31 @@
 
   <main id="top">
     <!-- Hero Section - Full-height banner with call-to-action -->
-    <section class="hero">
-      <div class="hero-inner">
-        <h1>Welcome to FIERCE</h1>
-        <p>A supportive community for incoming computing students to learn, connect, and grow together.</p>
-        <div class="hero-actions">
-          <a href="./programming.html" class="primary">View Events</a>
-          <a href="#faqs" class="secondary">Learn more</a>
+    <section class="hero hero-home">
+      <div class="hero-inner hero-inner--home">
+        <div class="hero-copy">
+          <h1>Welcome to FIERCE</h1>
+          <p>A supportive community for incoming computing students to learn, connect, and grow together.</p>
+          <div class="hero-actions">
+            <a href="./programming.html" class="primary">View Events</a>
+            <a href="#faqs" class="secondary">Learn more</a>
+          </div>
+        </div>
+        <div class="hero-brand-panel">
+          <img
+            src="./images/fierce_logo.jpeg"
+            alt="FIERCE tiger logo"
+            class="hero-brand-image"
+            decoding="async"
+          />
         </div>
       </div>
     </section>
 
-    <!-- Mission & History Section - Combined section explaining FIERCE's purpose and background -->
+    <!-- Mission &amp; History Section - Combined section explaining FIERCE's purpose and background -->
     <section id="mission" class="section alt">
       <div class="container">
-        <h2>Mission & History</h2>
+        <h2>Mission &amp; History</h2>
         <p>
           FIERCE (Fostering Inclusion by Engaging in Real-World Computing Education) is an inclusive Residential RAP for incoming computer science and informatics majors. Designed to welcome students who may feel newer to studying computing, FIERCE provides opportunities for academic and social support to foster and sustain professional support networks. FIERCE honors women's contributions to computing and welcomes all students including those from marginalized communities in computing: Women, LGBTQ+, BIPOC, and others.
         </p>
