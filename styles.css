@@ -475,10 +475,6 @@ button {
   flex-wrap: wrap;
 }
 
-.team-row--solo {
-  justify-content: center;
-}
-
 .person {
   display: flex;
   flex-direction: column;
