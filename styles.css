@@ -434,7 +434,8 @@ button {
 }
 
 /* Section fade-in animation */
-.section .container {
+/* Only hide section content when JS is active, so pages stay readable without it. */
+.js .section .container {
   opacity: 0;
   transform: translateY(60px);
   transition:
@@ -442,18 +443,18 @@ button {
     transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.section.visible .container {
+.js .section.visible .container {
   opacity: 1;
   transform: translateY(0);
 }
 
 /* Staggered animation for section content */
-.section .card,
-.section .list,
-.section .faq,
-.section .team-row,
-.section h2,
-.section p {
+.js .section .card,
+.js .section .list,
+.js .section .faq,
+.js .section .team-row,
+.js .section h2,
+.js .section p {
   opacity: 0;
   transform: translateY(40px);
   transition:
@@ -461,39 +462,39 @@ button {
     transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.section.visible .card,
-.section.visible .list,
-.section.visible .faq,
-.section.visible .team-row,
-.section.visible h2,
-.section.visible p {
+.js .section.visible .card,
+.js .section.visible .list,
+.js .section.visible .faq,
+.js .section.visible .team-row,
+.js .section.visible h2,
+.js .section.visible p {
   opacity: 1;
   transform: translateY(0);
 }
 
 /* Staggered transition timing */
-.section.visible .container {
+.js .section.visible .container {
   transition-delay: 0.1s;
 }
 
-.section.visible h2 {
+.js .section.visible h2 {
   transition-delay: 0.2s;
 }
 
-.section.visible p {
+.js .section.visible p {
   transition-delay: 0.3s;
 }
 
-.section.visible .card:nth-child(1) { transition-delay: 0.4s; }
-.section.visible .card:nth-child(2) { transition-delay: 0.5s; }
-.section.visible .card:nth-child(3) { transition-delay: 0.6s; }
-.section.visible .card:nth-child(4) { transition-delay: 0.7s; }
-.section.visible .card:nth-child(5) { transition-delay: 0.8s; }
-.section.visible .card:nth-child(6) { transition-delay: 0.9s; }
+.js .section.visible .card:nth-child(1) { transition-delay: 0.4s; }
+.js .section.visible .card:nth-child(2) { transition-delay: 0.5s; }
+.js .section.visible .card:nth-child(3) { transition-delay: 0.6s; }
+.js .section.visible .card:nth-child(4) { transition-delay: 0.7s; }
+.js .section.visible .card:nth-child(5) { transition-delay: 0.8s; }
+.js .section.visible .card:nth-child(6) { transition-delay: 0.9s; }
 
-.section.visible .list,
-.section.visible .faq,
-.section.visible .team-row {
+.js .section.visible .list,
+.js .section.visible .faq,
+.js .section.visible .team-row {
   transition-delay: 0.4s;
 }
 
@@ -662,10 +663,17 @@ button {
   box-shadow: 0 12px 28px rgba(0, 0, 0, 0.24);
 }
 
-.team-circle img {
+.team-photo {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+/* Optional portrait framing override for images that need a slightly tighter crop. */
+.team-photo--tight-crop {
+  object-position: center 32%;
+  transform: scale(1.06);
+  transform-origin: center;
 }
 
 .team-info {
