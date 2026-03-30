@@ -365,8 +365,7 @@ button {
 .section .card,
 .section .list,
 .section .faq,
-.section .team-top-row,
-.section .team-bottom-row,
+.section .team-row,
 .section h2,
 .section p {
   opacity: 0;
@@ -379,8 +378,7 @@ button {
 .section.visible .card,
 .section.visible .list,
 .section.visible .faq,
-.section.visible .team-top-row,
-.section.visible .team-bottom-row,
+.section.visible .team-row,
 .section.visible h2,
 .section.visible p {
   opacity: 1;
@@ -409,8 +407,7 @@ button {
 
 .section.visible .list,
 .section.visible .faq,
-.section.visible .team-top-row,
-.section.visible .team-bottom-row {
+.section.visible .team-row {
   transition-delay: 0.4s;
 }
 
@@ -470,22 +467,16 @@ button {
 /* -------------------------------
    Team
    ------------------------------- */
-.team-top-row {
+.team-row {
   margin-top: 32px;
   display: flex;
   justify-content: center;
-  gap: 20px;
-  flex-wrap: nowrap;
-  overflow-x: auto;
-  padding: 0 20px;
+  gap: 24px;
+  flex-wrap: wrap;
 }
 
-.team-bottom-row {
-  margin-top: 48px;
-  display: flex;
+.team-row--solo {
   justify-content: center;
-  gap: 32px;
-  flex-wrap: wrap;
 }
 
 .person {
@@ -630,9 +621,8 @@ button {
     grid-template-columns: 1fr;
   }
 
-  .team-top-row {
-    justify-content: flex-start;
-    padding: 0 4px 8px;
+  .team-row {
+    gap: 20px;
   }
 }
 
@@ -661,7 +651,7 @@ button {
     max-width: none;
   }
 
-  .team-bottom-row {
-    gap: 20px;
+  .team-row {
+    gap: 18px;
   }
 }
