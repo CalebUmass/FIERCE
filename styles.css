@@ -2,11 +2,11 @@
    Global variables
    ------------------------------- */
 :root {
-  --bg: #151112;
-  --bg-elevated: #1d1819;
-  --panel: rgba(29, 24, 25, 0.94);
-  --panel-elevated: rgba(36, 31, 32, 0.97);
-  --panel-soft: rgba(46, 40, 41, 0.92);
+  --bg: #1a1516;
+  --bg-elevated: #221d1e;
+  --panel: rgba(34, 28, 29, 0.94);
+  --panel-elevated: rgba(41, 35, 36, 0.97);
+  --panel-soft: rgba(51, 45, 46, 0.92);
   --text: #f6f2f0;
   --muted: #c7bbb7;
   --muted-strong: #ddd1cd;
@@ -35,7 +35,7 @@ html, body {
   background:
     radial-gradient(1100px 620px at 14% -10%, rgba(164, 39, 31, 0.09), transparent 55%),
     radial-gradient(900px 560px at 100% 0%, rgba(228, 186, 100, 0.06), transparent 48%),
-    linear-gradient(180deg, #171314 0%, #121011 100%);
+    linear-gradient(180deg, #1c1718 0%, #161314 100%);
   color: var(--text);
   font-family:
     'Inter',
@@ -85,7 +85,7 @@ button {
   position: sticky;
   top: 0;
   z-index: 1000;
-  background: rgba(12, 10, 11, 0.82);
+  background: rgba(18, 15, 16, 0.82);
   backdrop-filter: blur(18px);
   border-bottom: 1px solid var(--border);
   box-shadow:
@@ -401,7 +401,7 @@ button {
 }
 
 .section.alt {
-  background: linear-gradient(180deg, rgba(18, 15, 16, 0.96), rgba(12, 10, 11, 0.98));
+  background: linear-gradient(180deg, rgba(24, 20, 21, 0.96), rgba(17, 14, 15, 0.98));
 }
 
 .container {
