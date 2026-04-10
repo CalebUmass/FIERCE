@@ -772,6 +772,10 @@ button {
   text-transform: uppercase;
 }
 
+.person-front .team-hint {
+  font-size: 0.78rem;
+}
+
 /* -------------------------------
    Lists and FAQ
    ------------------------------- */
