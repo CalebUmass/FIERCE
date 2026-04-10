@@ -602,6 +602,28 @@ button {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
+.contact-hero {
+  text-align: center;
+}
+
+.contact-hero p {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.contact-hero .hero-actions {
+  justify-content: center;
+}
+
+.contact-card-wide {
+  grid-column: 1 / -1;
+}
+
+.contact-action {
+  margin-top: 18px;
+  align-self: flex-start;
+}
+
 .text-link {
   color: var(--brand-highlight);
   text-decoration: none;
